@@ -16,5 +16,21 @@ module.exports={
                 data:[]
             });
         }
+    },
+    login:async(req,res)=>{
+        try {
+       
+            return res.status(200).json({
+                status_code:200,
+                message:"successfully login",
+                data:[]
+            });
+        } catch (error) {
+            return res.status(200).json({
+                status_code:500,
+                message:error.message,
+                data:[]
+            });
+        }
     }
 }
