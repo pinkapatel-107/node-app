@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const apiV1Router = express.Router();
-const PORT = 3001
+const PORT = 3000
 const path = require('path');
 
 const app = express();
