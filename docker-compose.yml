@@ -9,4 +9,4 @@ services:
       - .:/app    
     env_file:
       - .env     
-    command: sh -c "npm install -g nodemon && npm start"
+    command: sh -c "npm install && npm start"
