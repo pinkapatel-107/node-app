@@ -1,20 +1,20 @@
 # Use the specific Node.js version as a base
 FROM node:20.17.0
 
-# Set the working directory to /app inside the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json into the container
 COPY package*.json ./
 
-# Install the dependencies
+# Install the dependencies inside the container
 RUN npm install
 
-# Copy the rest of the application code to the working directory
+# Copy the rest of the application code into the container
 COPY . .
 
-# Expose the application port
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Command to run the application
-CMD ["node", "app.js"]  
+# Start the app with app.js as the entry point
+CMD ["npm", "start"]
