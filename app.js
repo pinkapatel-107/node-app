@@ -2,8 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const apiV1Router = express.Router();
-const PORT = 3000
 const path = require('path');
+const dotenv = require('dotenv');
+
+const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.staging';
+dotenv.config({ path: envFile });
 
 const app = express();
 // parse application/x-www-form-urlencoded
@@ -23,8 +26,8 @@ apiV1Router.use('/converter', imageConverterRouter);
 
 app.use("/api/v1", apiV1Router);
 
-app.listen(PORT, () => {
-    console.log(`HTTP Server started on port ${PORT}...`);
+app.listen(process.env.PORT, () => {
+    console.log(`HTTP Server started on port ${process.env.PORT}...`);
 });
 
 

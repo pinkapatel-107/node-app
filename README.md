@@ -15,3 +15,9 @@ docker-compose down
  # for check the log 
  docker-compose logs
 
+# For Staging:
+docker-compose -f docker-compose.staging.yml up
+
+# For Production:
+docker-compose -f docker-compose.production.yml up
+
