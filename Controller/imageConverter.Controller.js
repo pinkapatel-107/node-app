@@ -20,7 +20,7 @@ module.exports = {
       await convertImagesToSinglePDF(imagePaths, pdfPath);
 
       const processedFile = {
-        pdfUrl: `http://localhost:3001/Uploads/pdfs/${path.basename(pdfPath)}`
+        pdfUrl: `http://localhost:3000/Uploads/pdfs/${path.basename(pdfPath)}`
       };
 
       return res.status(200).json({
