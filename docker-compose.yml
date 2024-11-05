@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node-app:
+    build:
+      context: . 
+    ports:
+      - "3000:3000"  # Adjust based on your environment
+    volumes:
+      - .:/app    
+    env_file:
+      - .env.${NODE_ENV}  # Load the appropriate env file based on NODE_ENV
+    environment:
+      - NODE_ENV=${NODE_ENV}  # Pass the NODE_ENV variable
+    command: sh -c "npm install && npm start"

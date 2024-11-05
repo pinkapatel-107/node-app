@@ -2,9 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const apiV1Router = express.Router();
-const PORT = 3000;
+const PORT = 3001
 const path = require('path');
-const deleteOldFiles = require('./listener');
 
 const app = express();
 
@@ -23,8 +22,8 @@ apiV1Router.use('/converter', imageConverterRouter);
 app.use("/api/v1", apiV1Router);
 deleteOldFiles();
 
-app.listen(PORT, () => {
-    console.log(`HTTP Server started on port ${PORT}...`);
+app.listen(process.env.PORT, () => {
+    console.log(`HTTP Server started on port ${process.env.PORT}...`);
 });
 
 
